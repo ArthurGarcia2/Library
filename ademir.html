@@ -7,12 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EAE ADEMIR</title>
     <link rel="shortcut icon" href="img/brandColor.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="libs/awesome/css/fontawesome.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="libs/awesome/css/all.css">
     <link rel="stylesheet" href="libs/sweet/dist/sweetalert2.css">
 </head>
 
 <body>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <a class="navbar-brand text-white">Biblioteca dos TCCs</a>
         <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,16 +21,28 @@
         </button>
         <div id="my-nav" class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#"><i class="fas fa-user-circle"></i><p>Tipos de Usuarios</p></a>
+                <li class="nav-item">
+                    <a class="nav-link text-white " href="src/tipo_usuario/view/list_tipo.html "><i class="fas fa-id-card-alt "></i> Tipos de Usuarios</a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <script src="js/jquery-3.5.1.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="libs/sweet/dist/sweetalert2.js"></script>
+    <div class="container" id="conteudo">
+        <div class="row justify-content-center mt-5 ">
+            <div class="col-12 col-sm-8 col-md-5 mt-5 ">
+                <img class="img-fluid " src="img/logo.png " alt="Biblioteca ">
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="js/jquery-3.6.0.js"></script>
+    <script src="js/bootstrap.min.js "></script>
+    <script src="libs/awesome/js/all.js "></script>
+    <script src="libs/sweet/dist/sweetalert2.js "></script>
+    <script src="js/acao_link.js "></script>
 </body>
 
 </html>

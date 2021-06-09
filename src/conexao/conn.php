@@ -3,7 +3,7 @@
     $hostmane = "fdb29.awardspace.net";
     $dbname = "3802844_library";
     $username = "3802844_library";
-    $password = "Ewp816204";
+    $password = "3:h:2+V87HR]3gok";
 
     try {
         $pdo = new PDO('mysql:host='.$hostmane.';dbname='.$dbname, $username, $password);
