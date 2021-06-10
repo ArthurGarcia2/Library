@@ -30,6 +30,7 @@
                     "mensagem" => "Ocorreu um erro. Cadastro não criado."
                 );
             }
+
         }else {
             try {
                 $stmt = $pdo->prepare('UPDATE TIPO_USUARIO SET DESCRICAO = :descricao WHERE IDTIPO_USUARIO = :id');
