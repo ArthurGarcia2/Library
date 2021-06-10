@@ -14,5 +14,6 @@ $(document).ready(function() {
         $('.btn_new_save').attr('data-operacao', 'insert')
 
         $('#tipo_modal').modal('show')
+        $('#table-tipo').DataTable().ajax.reload()
     })
 })
