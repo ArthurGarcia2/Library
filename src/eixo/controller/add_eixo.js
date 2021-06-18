@@ -7,13 +7,13 @@ $(document).ready(function() {
         $('.modal-title').empty()
         $('.modal-body').empty()
 
-        $('.modal-title').append('Adicionar um tipo de usuario')
-        $('.modal-body').load('src/tipo_usuario/view/form_new_tipo.html')
+        $('.modal-title').append('Adicionar um eixo tecnologico')
+        $('.modal-body').load('src/eixo/view/form_new_eixo.html')
 
         $('.btn_new_save').show()
         $('.btn_new_save').attr('data-operacao', 'insert')
 
-        $('#tipo_modal').modal('show')
-        $('#table-tipo').DataTable().ajax.reload()
+        $('#eixo_modal').modal('show')
+        $('#table-eixo').DataTable().ajax.reload()
     })
 })

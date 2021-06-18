@@ -3,7 +3,7 @@ $(document).ready(function() {
     $(".btn_new_save").click(function(e) {
         e.preventDefault()
 
-        let retorno = $('#form_new_tipo').serialize()
+        let retorno = $('#form_new_eixo').serialize()
 
         retorno += `&operacao=${$('.btn_new_save').attr('data-operacao')}`
 
@@ -12,7 +12,7 @@ $(document).ready(function() {
             dataType: 'json',
             assync: true,
             data: retorno,
-            url: 'src/tipo_usuario/model/save_new_tipo.php',
+            url: 'src/eixo/model/save_new_eixo.php',
             success: function(retorno) {
                 Swal.fire({
                     title: 'Atenção!',
@@ -20,8 +20,8 @@ $(document).ready(function() {
                     icon: retorno.tipo,
                     confirmButtonText: "Okay"
                 })
-                $('#tipo_modal').hide()
-                $('#table_tipo').DataTable().ajax.reload()
+                $('#eixo_modal').hide()
+                $('#table_eixo').DataTable().ajax.reload()
             }
         })
 

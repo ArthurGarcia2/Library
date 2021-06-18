@@ -1,25 +1,25 @@
 $(document).ready(function() {
 
-    $('#table_tipo').DataTable({
+    $('#table_eixo').DataTable({
         "processing": true,
         "serverSide": true,
         "ajax": {
-            "url": "src/tipo_usuario/model/listagem_tipo.php",
+            "url": "src/eixo/model/listagem_eixo.php",
             "type": "POST"
         },
         "languagem": {
             "url": "libs/dataTable/pt_br.json"
         },
         "columns": [{
-                "data": 'IDTIPO_USUARIO',
+                "data": 'IDEIXO',
                 "className": "text-center"
             },
             {
-                "data": 'DESCRICAO',
+                "data": 'NOME',
                 "className": "text-center"
             },
             {
-                "data": 'IDTIPO_USUARIO',
+                "data": 'IDEIXO',
                 "orderable": false,
                 "searchable": false,
                 "className": "text-center",
