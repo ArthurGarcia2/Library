@@ -19,7 +19,7 @@ $(document).ready(function() {
             success: function(dado) {
                 if (dado.tipo == "success") {
                     $('.modal-body').load('src/eixo/view/form_new_eixo.html', function() {
-                        $('#DESCRICAO').val(dado.dados.DESCRICAO)
+                        $('#NOME').val(dado.dados.NOME)
                         $('#IDEIXO').val(dado.dados.IDEIXO)
                     })
                     $('.btn_new_save').show()
