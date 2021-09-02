@@ -21,27 +21,25 @@ USE `epiz_29388338_library` ;
 -- Table `epiz_29388338_library`.`TIPO_USUARIO`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `epiz_29388338_library`.`TIPO_USUARIO` (
-  `IDTIPO_USUARIO` INT NOT NULL,
+  `IDTIPO_USUARIO` INT NOT NULL AUTO_INCREMENT,
   `DESCRICAO` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`IDTIPO_USUARIO`))
-ENGINE = InnoDB;
+  PRIMARY KEY (`IDTIPO_USUARIO`));
 
 
 -- -----------------------------------------------------
 -- Table `epiz_29388338_library`.`EIXO`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `epiz_29388338_library`.`EIXO` (
-  `IDEIXO` INT NOT NULL,
+  `IDEIXO` INT NOT NULL AUTO_INCREMENT,
   `NOME` VARCHAR(100) NOT NULL,
-  PRIMARY KEY (`IDEIXO`))
-ENGINE = InnoDB;
+  PRIMARY KEY (`IDEIXO`));
 
 
 -- -----------------------------------------------------
 -- Table `epiz_29388338_library`.`CURSO`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `epiz_29388338_library`.`CURSO` (
-  `IDCURSO` INT NOT NULL,
+  `IDCURSO` INT NOT NULL AUTO_INCREMENT,
   `NOME` VARCHAR(100) NOT NULL,
   `EIXO_IDEIXO` INT NOT NULL,
   PRIMARY KEY (`IDCURSO`),
@@ -50,15 +48,14 @@ CREATE TABLE IF NOT EXISTS `epiz_29388338_library`.`CURSO` (
     FOREIGN KEY (`EIXO_IDEIXO`)
     REFERENCES `epiz_29388338_library`.`EIXO` (`IDEIXO`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+    ON UPDATE NO ACTION);
 
 
 -- -----------------------------------------------------
 -- Table `epiz_29388338_library`.`USUARIO`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `epiz_29388338_library`.`USUARIO` (
-  `IDUSUARIO` INT NOT NULL,
+  `IDUSUARIO` INT NOT NULL AUTO_INCREMENT,
   `NOME` VARCHAR(150) NOT NULL,
   `EMAIL` VARCHAR(255) NOT NULL,
   `SENHA` VARCHAR(36) NOT NULL,
@@ -76,15 +73,14 @@ CREATE TABLE IF NOT EXISTS `epiz_29388338_library`.`USUARIO` (
     FOREIGN KEY (`CURSO_IDCURSO`)
     REFERENCES `epiz_29388338_library`.`CURSO` (`IDCURSO`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+    ON UPDATE NO ACTION);
 
 
 -- -----------------------------------------------------
 -- Table `epiz_29388338_library`.`TRABALHO`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `epiz_29388338_library`.`TRABALHO` (
-  `IDTRABALHO` INT NOT NULL,
+  `IDTRABALHO` INT NOT NULL AUTO_INCREMENT,
   `TITULO` VARCHAR(150) NOT NULL,
   `ANO` INT NOT NULL,
   `NUM_PAGINAS` INT NOT NULL,
@@ -92,15 +88,14 @@ CREATE TABLE IF NOT EXISTS `epiz_29388338_library`.`TRABALHO` (
   `ORIENTADOR` VARCHAR(100) NOT NULL,
   `COORIENTADOR` VARCHAR(100) NULL,
   `ARQUIVO` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`IDTRABALHO`))
-ENGINE = InnoDB;
+  PRIMARY KEY (`IDTRABALHO`));
 
 
 -- -----------------------------------------------------
 -- Table `epiz_29388338_library`.`AUTOR`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `epiz_29388338_library`.`AUTOR` (
-  `USUARIO_IDUSUARIO` INT NOT NULL,
+  `USUARIO_IDUSUARIO` INT NOT NULL AUTO_INCREMENT,
   `TRABALHO_IDTRABALHO` INT NOT NULL,
   PRIMARY KEY (`USUARIO_IDUSUARIO`, `TRABALHO_IDTRABALHO`),
   INDEX `fk_USUARIO_has_TRABALHO_TRABALHO1_idx` (`TRABALHO_IDTRABALHO` ASC),
@@ -114,15 +109,14 @@ CREATE TABLE IF NOT EXISTS `epiz_29388338_library`.`AUTOR` (
     FOREIGN KEY (`TRABALHO_IDTRABALHO`)
     REFERENCES `epiz_29388338_library`.`TRABALHO` (`IDTRABALHO`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+    ON UPDATE NO ACTION);
 
 
 -- -----------------------------------------------------
 -- Table `epiz_29388338_library`.`HISTORICO`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `epiz_29388338_library`.`HISTORICO` (
-  `IDHISTORICO` INT NOT NULL,
+  `IDHISTORICO` INT NOT NULL AUTO_INCREMENT,
   `DATA` DATE NOT NULL,
   `HORA` TIME NOT NULL,
   `TRABALHO_IDTRABALHO` INT NOT NULL,
@@ -139,8 +133,7 @@ CREATE TABLE IF NOT EXISTS `epiz_29388338_library`.`HISTORICO` (
     FOREIGN KEY (`USUARIO_IDUSUARIO`)
     REFERENCES `epiz_29388338_library`.`USUARIO` (`IDUSUARIO`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+    ON UPDATE NO ACTION);
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

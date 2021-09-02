@@ -1,9 +1,9 @@
 <?php
 
-    $hostmane = "fdb29.awardspace.net";
-    $dbname = "3802844_library";
-    $username = "3802844_library";
-    $password = "lV2Ihy}g3+yO(Yt}";
+    $hostmane = "sql101.epizy.com";
+    $dbname = "epiz_29388338_library";
+    $username = "epiz_29388338";
+    $password = "2OkjKsvk6dH6";
 
     try {
         $pdo = new PDO('mysql:host='.$hostmane.';dbname='.$dbname, $username, $password);

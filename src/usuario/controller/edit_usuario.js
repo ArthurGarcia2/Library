@@ -61,7 +61,7 @@ $(document).ready(function() {
                     })
 
                     $('.btn_new_save').show()
-                    $('.btn_new_save').removeAttr('data-operacao')
+                    $('.btn_new_save').removeAttr('data-operation')
                     $('#usuario_modal').modal('show')
                 }
             }
