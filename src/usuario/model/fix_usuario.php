@@ -2,15 +2,15 @@
 
     include('../../conexao/conn.php');
 
-    $nome = $_REQUEST['NOME'];
+    $idusuario = $_REQUEST['IDUSUARIO'];
 
+    $dados = array();
 
-    $sql = "SELECT * FROM USUARIO WHERE NOME LIKE '%$nome%' ORDER BY NOME DESC";
+    $sql = "SELECT * FROM USUARIO WHERE IDUSUARIO LIKE '%$idusuario%'";
 
     $result = $pdo->query($sql);
 
     if ($result) {
-        $dados = array();
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
             $dados[] = array_map('utf8_encode', $row);
         }

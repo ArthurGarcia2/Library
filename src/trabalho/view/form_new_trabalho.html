@@ -13,12 +13,14 @@
             <select type="number" name="NUM_PAGINAS" id="NUM_PAGINAS" class="form-control"></select>
         </div>
     </div>
+
     <div class="form-group row">
         <div class="col-12">
             <label>Resumo: </label>
             <textarea name="RESUMO" id="RESUMO" cols="30" rows="5" class="form-control"></textarea>
         </div>
     </div>
+
     <div class="form-group row">
         <div class="col-12 col-md-6">
             <label>Orientador: </label>
@@ -29,6 +31,13 @@
             <select type="text" name="COORIENTADOR" id="COORIENTADOR" class="form-control"></select>
         </div>
     </div>
+
+
+    <div class="row">
+        <div class="col-12">
+            <label>Pesquisar Autores: </label>
+        </div>
+    </div>
     <div class="form-group row">
         <div class="col-10 col-md-8">
             <input type="text" name="PESQUI_AUTOR" id="PESQUI_AUTOR" class="form-control">
@@ -37,13 +46,38 @@
             <button class="btn btn-primary btn_pesqui" type="button"><i class="fas fa-search"></i> Pesquisar</button>
         </div>
     </div>
+    <div class="from-group row">
+        <div class="col-12" id="campo_autores">
+        </div>
+        <div class="col-2" id="campo_autores_btn">
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-12">
+            <label>Autores Fixados: </label>
+        </div>
+    </div>
+    <div class="from-group row">
+        <div class="col-12" id="fixados">
+        </div>
+        <div class="col-2" id="fixados_btn">
+        </div>
+    </div>
+
+
+
     <div class="form-group row">
         <div class="col-12 col-md-6">
             <label>Arquivo:</label>
             <input type="text" name="ARQUIVO" id="ARQUIVO" class="form-control">
         </div>
     </div>
+
     <input type="hidden" name="IDTRABALHO" id="IDTRABALHO">
 </form>
 
 <script src="src/trabalho/controller/pesqui_usuario.js"></script>
+<script src="src/trabalho/controller/fix_usuario.js"></script>
+<script src="src/trabalho/controller/unpin_usuario.js"></script>
