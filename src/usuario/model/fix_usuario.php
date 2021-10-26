@@ -6,7 +6,7 @@
 
     $dados = array();
 
-    $sql = "SELECT * FROM USUARIO WHERE IDUSUARIO LIKE '%$idusuario%'";
+    $sql = "SELECT * FROM USUARIO WHERE IDUSUARIO='$idusuario'";
 
     $result = $pdo->query($sql);
 
