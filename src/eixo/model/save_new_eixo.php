@@ -27,7 +27,7 @@
             } catch (PDOException $e) {
                 $retorno = array(
                     "tipo" => "error",
-                    "mensagem" => "Ocorreu um erro. Cadastro não criado."
+                    "mensagem" => "Ocorreu um erro. Cadastro não criado. auuuuuuuu"
                 );
             }
 

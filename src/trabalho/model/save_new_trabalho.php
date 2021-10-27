@@ -69,11 +69,9 @@
                                 ':f' => utf8_decode($requestData['COORIENTADOR']),
                                 ':g' => $novoNome
                             ));
-                            $retorno = array(
-                                "tipo" => 'success',
-                                "mensagem" => 'Trabalho cadastrado com sucesso.'
-                            );
+    
 
+                
                             
                             // Save do autor
                             $sql =  $pdo->query("SELECT * FROM TRABALHO ORDER BY IDTRABALHO DESC LIMIT 1");
@@ -82,24 +80,25 @@
                                 $IDTRABALHO = $resultado['IDTRABALHO'];
                             }
 
-                            $indice = count(array_filter($requestData['PESQUI_AUTOR']));
+                            $indice = count(array_filter($requestData['USUARIO_IDUSUARIO']));
 
-                            for ($i = 0; $indice > $i; $i++){
-                                $stmt = $pdo->prepare('INSERT INTO AUTOR (TRABALHO_IDTRABALHO, USUARIO_IDUSUARIO) values (a:, b:)');
+                            for ($i = 0; $i < $indice; $i++){
+                                $stmt = $pdo->prepare('INSERT INTO AUTOR (TRABALHO_IDTRABALHO, USUARIO_IDUSUARIO) VALUES (:a, :b)');
                                 $stmt->execute(array(
-                                    'a:' => $IDTRABALHO,
-                                    'b:' => $requestData['PESQUI_AUTOR'][$i]
+                                    ':a' => $IDTRABALHO,
+                                    ':b' => $requestData['USUARIO_IDUSUARIO'][$i]
                                 ));
-                                alert($requestData['PESQUI_AUTOR'][$i]);
                             }
 
-
+                            $retorno = array(
+                                "tipo" => 'success',
+                                "mensagem" => 'Trabalho cadastrado com sucesso.'
+                            );
 
                         } catch(PDOException $e) {
                             $retorno = array(
                                 "tipo" => 'error',
-                                "mensagem" => 'Não foi possível efetuar o cadastro do trabalho.',
-                                "teste" => $requestData['PESQUI_AUTOR'][0]
+                                "mensagem" => 'Não foi possível efetuar o cadastro do trabalho.'
                             );
                         }
                     } else {

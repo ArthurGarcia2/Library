@@ -46,7 +46,7 @@ function fix_usuario() {
                 $('#fixados_group').append(`
                     <div class="col-10">
                         <div type="text" id="existing${id_user}" data-operation="tru" class="form-control">${nome_user}</div>
-                        <input type="hidden" name="USUARIO_IDUSUARIO" value="${id_user}" />
+                        <input type="hidden" name="USUARIO_IDUSUARIO[]" value="${id_user}" />
                     </div>
                     <div class="col-2">
                         <button class="btn btn-primary unpin_user" name="${nome_user}" id="${id_user}" type="button"><i class="fas fa-unlink"></i></button>
